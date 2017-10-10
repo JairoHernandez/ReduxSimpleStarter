@@ -1,0 +1,128 @@
+Email: ste.grider@gmail.com
+Twitter: @sg_in_sf
+Github: github.com/stephengrider
+
+All code located here
+https://github.com/StephenGrider/ReduxCasts
+
+
+------Environment Setup------
+download boiler plate code and run 'npm install'
+
+ReduxSimpleStarter$ npm install
+
+You can run a server using webpack
+
+"scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+
+ReduxSimpleStarter$ npm start
+
+> redux-simple-starter@1.0.0 start /home/jairomh/REACTmodern/ReduxSimpleStarter
+> node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js
+
+ http://localhost:8080/webpack-dev-server/
+webpack result is served from /
+content is served from ./
+404s will fallback to /index.html
+Hash: 86fa3c06b4901fe55987
+Version: webpack 1.15.0
+Time: 2845ms
+    Asset    Size  Chunks             Chunk Names
+bundle.js  746 kB       0  [emitted]  main
+chunk    {0} bundle.js (main) 706 kB [rendered]
+    [0] multi main 28 bytes {0} [built]
+    [1] ./src/index.js 854 bytes {0} [built]
+    [2] ./~/react/react.js 56 bytes {0} [built]
+    [3] ./~/react/lib/React.js 1.49 kB {0} [built]
+    [4] ./~/react/lib/ReactDOM.js 3.71 kB {0} [built]
+    [5] ./~/process/browser.js 5.42 kB {0} [built]
+    [6] ./~/react/lib/ReactCurrentOwner.js 653 bytes {0} [built]
+.....
+  [199] ./src/components/app.js 2.21 kB {0} [built]
+  [200] ./src/reducers/index.js 337 bytes {0} [built]
+webpack: Compiled successfully.
+
+Go to http://localhost:8080/ this will load React simple starter page.
+
+------A Taste of JSX------
+When you think "Component" or "View"(used interchangeably) think something that produces HTML like an object or function.
+You're writing JS to ultimately produce HTML.
+
+const App = function() {
+    // return JSX, which looks like HTML but it's really JS
+    return <div>Hi!</div> 
+};
+
+JSX just like ES6 use of 'const' cannot be interpreted by the browser, which has to be translated by webpack and babel to vanilla JS.
+Render converts JSX into HTML.
+
+------Component structure------
+
+It's fine to have multiple of one component on the screen
+Nesting components is like having having one component that inside of it renders a list of components.
+
+------YouTube Search API signup------
+API is free but you need to get a key to use using your google account(same as gmail/youtube).
+Go here and watch video to get key: console.developers.google.com
+
+AIzaSyAa6SAsx2VsIpwOf8i1IL8wnYozl-CxdOQ
+
+------Export Statements------
+
+Classes(aka class based components)
+    Used for internal record keeping or ability to be aware of itself and what's happened to it
+    since it's been rendered. Like an input field that updates to tell other components the user 
+    has typed something and this is what they have typed.
+    
+    Unlike a functional component like this one
+
+        const SearchBar = () => {
+            // Turns into a call of React.createElement() which is why you always import React.
+            return <input />; 
+        };
+    
+    you have to refactor to an ES6 class component
+
+        // Reads like 'gives SearchBar access to all functionality from React.Component class'.
+        class SearchBar extends React.Component {
+            render();
+        }
+    
+    Every class based component MUST HAVE a render() method. This is a method not a funciton.
+
+State
+
+------Handling User Events------
+
+In react there are 2 steps to handling user events.
+
+    1. Function that runs whenever event occurs.
+    2. Pass event handler to element we want to monitor for events.
+
+    WE WANT TO KNOW WHENEVER input ELEMENT INSIDE OF OUR SEARCH BAR HAS TEXT CHANGED.
+
+------Introduction to State------
+
+State is a plain JS object that is used to record and react to user events.
+Each class based component that we define has its own state object.
+Whenever a component state is changed the component immediately re-renders and forces
+all of its children components to re-render as well.
+
+Before ever using state inside a component you need to initialize state.
+TIP: Functional components do not have state only class based components do.
+
+Updating state is different than creating it.
+ALWAYS use this.setState for it.
+
+    search_bar.js
+        // Plain JS object I already mentioned.
+        // Only time you will ever see state setup this way is in the constructor function.
+        // Any where else you would use this.setState
+        this.state = {term: ''}; // As user types it will update this.state.term. the property term can be anything.
+
+------Controlled Components------
+
+The state should tell the input what the state should be NOT backwards in our first state example below.
+
+    <input onChange={event => this.setState({ term: event.target.value })} />
