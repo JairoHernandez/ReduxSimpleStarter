@@ -126,3 +126,17 @@ ALWAYS use this.setState for it.
 The state should tell the input what the state should be NOT backwards in our first state example below.
 
     <input onChange={event => this.setState({ term: event.target.value })} />
+
+------Refactoring Functional Components to Class Components------
+
+Whenever you are going to handle state turn your funcitonal component into a class based component and use render().
+"Data changing over time" sounds like a great use for state. Like searching for a video often.
+
+------Props------
+class based components format is "this.props = something"
+function based components format is "props = something"
+
+------List Item Keys------
+Using a key is recommended for improving  performance.
+    
+    return <VideoListItem key={video.etag} video={video} />
