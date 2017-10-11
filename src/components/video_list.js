@@ -6,9 +6,13 @@ const VideoList = (props) => {
     const videoItems = props.videos.map((video) => {
         // etag key is being set by youtube for each video.
         // This will avoid error 'Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `VideoList`'
-        return <VideoListItem key={video.etag} video={video} />
+        return (
+            <VideoListItem 
+                onVideoSelect={props.onVideoSelect}
+                key={video.etag} video={video} />
+        );
     });
-    //console.log(`TEST -- ${videoItems}`);
+    // console.log(`TEST -- ${videoItems}`);
 
     // react is smart enough to list out as 'li' items from VideoItems array
     return (

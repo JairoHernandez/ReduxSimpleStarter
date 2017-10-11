@@ -26,12 +26,18 @@ class SearchBar extends Component { // same as previous line using syntactic sug
         // return <input onChange={event => console.log(event.target.value)} />;
         // Refactor with state.
         return (
-            <div>
-                <input onChange={event => this.setState({ term: event.target.value })} />
+            <div className="search-bar">
+                <input 
+                    value = {this.state.term}
+                    onChange={event => this.onInputChange(event.target.value)} />
             </div>
         );
     }
 
+    onInputChange(term) {
+        this.setState({term});
+        this.props.onSearchTermChange(term);
+    }
     // Event handler can use name handleInputChange which is common in React community.
     // 'Input' is name of element you're watching for event.
     // 'Change' is name of the event itself.
