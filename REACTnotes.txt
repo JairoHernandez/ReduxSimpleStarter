@@ -140,3 +140,11 @@ function based components format is "props = something"
 Using a key is recommended for improving  performance.
     
     return <VideoListItem key={video.etag} video={video} />
+
+------Even More on Redux!------
+
+Redux is the idea of separating into two buckets:
+    1 bucket for data(Redux) -- Application state as oppose to component level state.
+    1 bucket for views(React)
+
+Knowing how to model your state is very critical.
