@@ -5,6 +5,18 @@ Github: github.com/stephengrider
 All code located here
 https://github.com/StephenGrider/ReduxCasts
 
+HEROKU DEPLOY
+jairomh@DEV2:~/REACTmodern/YouTubeSearch$ heroku login
+jairomh@DEV2:~/REACTmodern/YouTubeSearch$ heroku create
+ ▸    heroku-cli: update available from 6.12.4 to 6.14.36-15f8a25
+Creating app... done, ⬢ pacific-woodland-93955
+https://pacific-woodland-93955.herokuapp.com/ | https://git.heroku.com/pacific-woodland-93955.git
+jairomh@DEV2:~/REACTmodern/YouTubeSearch$ git remote -v
+heroku	https://git.heroku.com/pacific-woodland-93955.git (fetch)
+heroku	https://git.heroku.com/pacific-woodland-93955.git (push)
+origin	git@github.com:JairoHernandez/YouTubeSearch.git (fetch)
+origin	git@github.com:JairoHernandez/YouTubeSearch.git (push)
+
 
 jairomh@ubuntu64-DevOps:~/REACTmodern/WeatherApp$ heroku create
 Creating app... done, ⬢ floating-spire-27492
