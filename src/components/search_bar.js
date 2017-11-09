@@ -25,6 +25,7 @@ class SearchBar extends Component { // same as previous line using syntactic sug
         // Refactor to this.
         // return <input onChange={event => console.log(event.target.value)} />;
         // Refactor with state.
+        console.log('search_bar.js render');
         return (
             <div className="search-bar">
                 <input 

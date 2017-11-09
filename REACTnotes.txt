@@ -6,8 +6,15 @@ All code located here
 https://github.com/StephenGrider/ReduxCasts
 
 
+jairomh@ubuntu64-DevOps:~/REACTmodern/WeatherApp$ heroku create
+Creating app... done, ⬢ floating-spire-27492
+https://floating-spire-27492.herokuapp.com/ | https://git.heroku.com/floating-spire-27492.git
+
+
 ------Environment Setup------
 download boiler plate code and run 'npm install'
+
+git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
 
 ReduxSimpleStarter$ npm install
 
