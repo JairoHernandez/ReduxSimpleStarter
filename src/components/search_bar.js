@@ -5,7 +5,7 @@
 //     return <input />; 
 // };
 
-// Syntactic sugar. { Component } is same as -- const Component = React.Comopnent.
+// Syntactic sugar. { Component } is same as -- const Component = React.Component.
 import React, { Component } from 'react'; 
 
 // class SearchBar extends React.Component {
@@ -20,11 +20,12 @@ class SearchBar extends Component { // same as previous line using syntactic sug
         this.state = {term: ''}; // As user types it will update this.state.term. the property term can be anything.
     }
 
-    render() {
+    render() { // Eveyr class component must have a render.
         // return <input onChange={this.onInputChange}/>;
         // Refactor to this.
         // return <input onChange={event => console.log(event.target.value)} />;
         // Refactor with state.
+        // onChange is a React defined property
         console.log('search_bar.js render');
         return (
             <div className="search-bar">

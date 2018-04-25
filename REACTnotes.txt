@@ -64,6 +64,13 @@ webpack: Compiled successfully.
 
 Go to http://localhost:8080/ this will load React simple starter page.
 
+------ReactDOM vs. React------
+
+React is the core React library. It knows how to manage, render and nest components.
+    - All JS files will need to import this if there's a function/class that returns JSX.
+ReactDOM inserts component into DOM aka renders to DOM.
+    
+
 ------A Taste of JSX------
 When you think "Component" or "View"(used interchangeably) think something that produces HTML like an object or function.
 You're writing JS to ultimately produce HTML.
@@ -78,8 +85,11 @@ Render converts JSX into HTML.
 
 ------Component structure------
 
+A component is a function or object that returns some amount of HTML.
 It's fine to have multiple of one component on the screen
 Nesting components is like having having one component that inside of it renders a list of components.
+Doing components in general is very reusable.
+Finally, the big app itself will surround all of these components, which is in index.js.
 
 ------YouTube Search API signup------
 API is free but you need to get a key to use using your google account(same as gmail/youtube).
@@ -89,10 +99,11 @@ AIzaSyAa6SAsx2VsIpwOf8i1IL8wnYozl-CxdOQ
 
 ------Export Statements------
 
-Classes(aka class based components)
+Classes(aka class based components, which is an ES6 class with properties and methods)
     Used for internal record keeping or ability to be aware of itself and what's happened to it
     since it's been rendered. Like an input field that updates to tell other components the user 
-    has typed something and this is what they have typed.
+    has typed something and this is what they have typed. Every class based component must have
+    a render() method and it SHOULD return some JSX or else it generates error.
     
     Unlike a functional component like this one
 
@@ -120,6 +131,9 @@ In react there are 2 steps to handling user events.
     2. Pass event handler to element we want to monitor for events.
 
     WE WANT TO KNOW WHENEVER input ELEMENT INSIDE OF OUR SEARCH BAR HAS TEXT CHANGED.
+
+BTW the events that occur inside an <input> element is vanilla JS that reactjs
+cant tap into with this.onInputChange.
 
 ------Introduction to State------
 
